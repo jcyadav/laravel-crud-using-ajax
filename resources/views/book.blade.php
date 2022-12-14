@@ -128,14 +128,16 @@
     $('body').on('click', '.editBook', function () {
       var book_id = $(this).data('id');
       $.get("{{ route('books.index') }}" +'/' + book_id +'/edit', function (data) {
-          $('#modelHeading').html("Edit Book");
+          $('#modelHeading').html("Edit Student");
           $('#saveBtn').val("edit-book");
           $('#ajaxModel').modal('show');
           $('#book_id').val(data.id);
-          $('#title').val(data.title);
-          $('#author').val(data.author);
           $('#name').val(data.name);
-          $('#address').val(data.address);
+          $('#email').val(data.email);
+          $('#mobile').val(data.mobile);
+          $('#class').val(data.class);
+          $('#father_name').val(data.father_name);
+          $('#mother_name').val(data.mother_name);
       })
    });
     $('#saveBtn').click(function (e) {
